@@ -2,11 +2,10 @@ package com.android.example.navigationcomponent
 
 
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.LinearLayoutManager
 import entity.City
 import kotlinx.android.synthetic.main.fragment_main.*
@@ -18,16 +17,17 @@ class MainFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_main, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        recyclerView.layoutManager = LinearLayoutManager(activity)
+        recyclerView.layoutManager = LinearLayoutManager(activity!!)
         recyclerView.adapter = CityAdapter(activity!!,loadData())
-        val itemDecor = DividerItemDecoration(activity,1)
-        recyclerView.addItemDecoration(itemDecor)
+        setHasOptionsMenu(true)
+
     }
 
 
@@ -46,5 +46,17 @@ class MainFragment : Fragment() {
         }
         return  list
     }
+
+
+
+    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
+        inflater?.inflate(R.menu.overflow_menu,menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        return NavigationUI.onNavDestinationSelected (item!!,
+            view!!.findNavController())
+    }
+
 
 }

@@ -71,4 +71,9 @@
             siège. C\'est aussi un important centre médiatique du pays (journaux, radios, chaînes de télévision...)
         </item>
     </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_activity_main3">Main3Activity</string>
 </resources>

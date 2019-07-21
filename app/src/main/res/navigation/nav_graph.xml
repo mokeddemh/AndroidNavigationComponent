@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/nav_graph" app:startDestination="@id/mainFragment">
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/nav_graph" app:startDestination="@id/mainFragment">
 
     <fragment android:id="@+id/mainFragment" android:name="com.android.example.navigationcomponent.MainFragment"
-              android:label="MainFragment">
+              android:label="Cities">
         <action android:id="@+id/action_mainFragment_to_detailFragment" app:destination="@id/detailFragment"
                 app:enterAnim="@anim/slide_in_left" app:exitAnim="@anim/slide_out_left"
                 app:popEnterAnim="@anim/slide_in_right" app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
     <fragment android:id="@+id/detailFragment" android:name="com.android.example.navigationcomponent.DetailFragment"
-              android:label="DetailFragment"/>
+              android:label="City details"/>
+    <fragment android:id="@+id/aboutFragment" android:name="com.android.example.navigationcomponent.AboutFragment"
+              android:label="fragment_about" tools:layout="@layout/fragment_about"/>
+    <fragment android:id="@+id/airportFragment" android:name="com.android.example.navigationcomponent.AirportFragment"
+              android:label="fragment_airport" tools:layout="@layout/fragment_airport"/>
+    <fragment android:id="@+id/cameraFragment" android:name="com.android.example.navigationcomponent.CameraFragment"
+              android:label="fragment_camera" tools:layout="@layout/fragment_camera"/>
+    <fragment android:id="@+id/audioFragment" android:name="com.android.example.navigationcomponent.AudioFragment"
+              android:label="fragment_audio" tools:layout="@layout/fragment_audio"/>
 </navigation>
