@@ -13,22 +13,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-<FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
->
-
-
-    <fragment
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:name="androidx.navigation.fragment.NavHostFragment"
-            app:navGraph="@navigation/nav_graph"
-            app:defaultNavHost="true"
-            android:id="@+id/navHostFragment"
-    />
-</FrameLayout>
-
+    <include layout="@layout/content_main"/>
 
     <com.google.android.material.bottomappbar.BottomAppBar
             android:id="@+id/bar"
