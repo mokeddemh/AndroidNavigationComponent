@@ -3,16 +3,10 @@
             xmlns:app="http://schemas.android.com/apk/res-auto"
             xmlns:tools="http://schemas.android.com/tools" android:id="@+id/nav_graph" app:startDestination="@id/mainFragment">
 
-    <fragment android:id="@+id/mainFragment" android:name="com.android.example.navigationcomponent.MainFragment"
-              android:label="Cities">
-        <action android:id="@+id/action_mainFragment_to_detailFragment" app:destination="@id/detailFragment"
-                app:enterAnim="@anim/slide_in_left" app:exitAnim="@anim/slide_out_left"
-                app:popEnterAnim="@anim/slide_in_right" app:popExitAnim="@anim/slide_out_right"/>
-    </fragment>
     <fragment
-            android:id="@+id/detailFragment"
-            android:name="com.android.example.navigationcomponent.DetailFragment"
-            android:label="Details" />
+            android:id="@+id/mainFragment"
+            android:name="com.android.example.navigationcomponent.MainFragment"
+            android:label="Home" />
     <fragment
             android:id="@+id/aboutFragment"
             android:name="com.android.example.navigationcomponent.AboutFragment"
