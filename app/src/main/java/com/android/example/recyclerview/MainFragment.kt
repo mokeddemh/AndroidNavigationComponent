@@ -28,7 +28,7 @@ class MainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        cityModel = ViewModelProvider(this).get(CityModel::class.java)
+        cityModel = ViewModelProvider(requireActivity()).get(CityModel::class.java)
         binding.recyclerView.layoutManager = GridLayoutManager(requireActivity(),resources.getInteger(R.integer.nbcol))
         binding.recyclerView.adapter = CityAdapter(requireActivity(),cityModel.cities)
         val itemDecor = DividerItemDecoration(requireActivity(),1)

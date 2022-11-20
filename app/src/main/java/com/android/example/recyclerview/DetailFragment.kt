@@ -27,7 +27,7 @@ class DetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        cityModel = ViewModelProvider(this).get(CityModel::class.java)
+        cityModel = ViewModelProvider(requireActivity()).get(CityModel::class.java)
         val position = arguments?.getInt("position")
         if (position != null) {
             val city = cityModel.cities.get(position)
